@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>04</title>
+</head>
+
+<body>
+    <script>
+       
+
+
+        /*•	* Ноль чётный. Единица нечётная. У любого числа N чётность такая же, как у N-2.Напишите рекурсивную функцию isEven согласно этим правилам. Она должна принимать число и возвращать булевское значение. Потестируйте её на 50 и 75. Попробуйте задать ей -1. Почему она ведёт себя таким образом? Можно ли её как-то исправить?*/
+
+
+
+
+        function isEven(N) {
+            if (N < 0) {
+                N = -N;
+                isEven(N);
+            }
+            switch (N) {
+            	case(0): return true;
+			    case (1): return false;
+			    default: return isEven(N - 2);
+            }
+        }
+
+        var N = prompt('N = ?');
+
+        if (isEven(N)) {
+            alert('четное');
+        } else {
+            alert('нечетное');
+        }
+    </script>
+
+</body>
+
+</html>
